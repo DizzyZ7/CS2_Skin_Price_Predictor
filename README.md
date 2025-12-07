@@ -41,7 +41,7 @@ cd CS2_Skin_Price_Predictor
 
 Рекомендуется использовать виртуальное окружение для изоляции зависимостей.
 
-python -m venv venv
+```python -m venv venv
 # Активация виртуального окружения
 # Windows
 .\venv\Scripts\activate
@@ -49,31 +49,37 @@ python -m venv venv
 source venv/bin/activate
 
 pip install -r requirements.txt
+```
 3. Генерация моковых данных и инициализация базы данных
 
 Этот шаг сгенерирует синтетические данные и сохранит их в data/cs2_skin_prices.db.
-
+```
 python src/scraper.py
+```
 4. Обучение модели
 
 Этот скрипт загрузит данные, обработает их, обучит модель и сохранит ее в models/price_predictor_model.pkl.
 
+```
 python src/model_trainer.py
+```
 5. Использование модели для предсказания
 
 Вы можете предсказать цену скина, указав его характеристики:
-
+```
 python src/predictor.py \
     --name "AK-47 | Redline" \
     --wear "Field-Tested" \
     --float 0.20 \
     --stattrak False \
     --rarity "Covert"
+```
 Пример вывода:
-
+```
 Предсказанная цена для AK-47 | Redline (Field-Tested) Float 0.20 (StatTrak: False, Rarity: Covert): $25.50
+```
 Структура проекта
-
+```
 src/scraper.py: Генерирует моковые данные о ценах скинов и сохраняет их в базу данных.
 src/database.py: Содержит функции для работы с базой данных SQLite (создание таблиц, вставка данных).
 src/data_processor.py: Загружает данные из БД, выполняет EDA, очистку и инженерию признаков.
@@ -82,3 +88,4 @@ src/predictor.py: Загружает сохранённую модель и пр
 src/utils.py: Вспомогательные функции, такие как маппинг категориальных признаков.
 data/: Директория для файла базы данных cs2_skin_prices.db.
 models/: Директория для сохранённой модели price_predictor_model.pkl.
+```
