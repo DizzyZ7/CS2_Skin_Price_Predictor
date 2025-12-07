@@ -1,7 +1,3 @@
-1. README.md
-
-Этот файл будет лицом вашего проекта на GitHub.
-
 # CS2 Skin Price Predictor (Mock Data Example)
 
 ## Описание проекта
