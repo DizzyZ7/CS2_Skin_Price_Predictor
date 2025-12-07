@@ -36,7 +36,7 @@
 ```bash
 git clone https://github.com/DizzyZ7/CS2_Skin_Price_Predictor.git
 cd CS2_Skin_Price_Predictor
-
+```
 2. Создание виртуального окружения и установка зависимостей
 
 Рекомендуется использовать виртуальное окружение для изоляции зависимостей.
